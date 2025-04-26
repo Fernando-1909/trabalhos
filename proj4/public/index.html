@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Página Inicial</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GameStore</div>
+            <div class="nav-links">
+                <a href="/" class="active">Home</a>
+                <a href="/about">Sobre</a>
+                <a href="/admin">Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Os melhores jogos pelos melhores preços</h1>
+        <p>Descubra nossa coleção exclusiva com descontos imperdíveis</p>
+        <a href="#games" class="btn btn-primary">Ver Jogos</a>
+    </section>
+
+    <section class="container" id="games">
+        <h2 class="section-title">Nossos Jogos</h2>
+        
+        <!-- Jogos estáticos (decoração) -->
+        <div class="games-grid">
+            <!-- Jogo 1 -->
+            <div class="game-card">
+                <div class="game-image-container">
+                    <img src="images/balatro.png" alt="The Witcher 3" class="game-image">
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Balatro</h3>
+                    <div class="game-meta">
+                        <span class="game-platform">PC/PS/XBOX</span>
+                        <span class="game-genre">Cartas</span>
+                    </div>
+                    <div class="game-price">
+                        <span class="original-price">R$ 34572934752389723,90</span>
+                        <span class="discounted-price">R$ 1,99</span>
+                        <span class="discount-badge">descontasso%</span>
+                    </div>
+                    <p class="game-description">Um dos melhores jogos de todos os tempos</p>
+                    <button class="btn btn-sm">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Jogo 2 -->
+            <div class="game-card">
+                <div class="game-image-container">
+                    <img src="images/hk.png" alt="Cyberpunk 2077" class="game-image">
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Hollow knight</h3>
+                    <div class="game-meta">
+                        <span class="game-platform">PC/PS/XBOX</span>
+                        <span class="game-genre">Aventura</span>
+                    </div>
+                    <div class="game-price">
+                        <span class="original-price">R$ 179,90</span>
+                        <span class="discounted-price">R$ 143,90</span>
+                        <span class="discount-badge">-20%</span>
+                    </div>
+                    <p class="game-description">Insetos legais</p>
+                    <button class="btn btn-sm">Saiba Mais</button>
+                </div>
+            </div>
+
+            <!-- Jogo 3 -->
+            <div class="game-card">
+                <div class="game-image-container">
+                    <img src="images/zelda.png" alt="Zelda Breath of the Wild" class="game-image">
+                </div>
+                <div class="game-info">
+                    <h3 class="game-title">Zelda Breath of the Wild</h3>
+                    <div class="game-meta">
+                        <span class="game-platform">Switch</span>
+                        <span class="game-genre">Aventura</span>
+                    </div>
+                    <div class="game-price">
+                        <span class="discounted-price">R$ 159,90</span>
+                    </div>
+                    <p class="game-description">O melhor jogo de exploração</p>
+                    <button class="btn btn-sm">Saiba Mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Receba nossas ofertas</h2>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Seu melhor e-mail">
+                <button type="submit" class="btn btn-primary">Assinar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-section">
+                <h3>GameStore</h3>
+                <p>Sua loja de jogos preferida</p>
+            </div>
+            <div class="footer-section">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">Sobre</a></li>
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 GameStore - Todos os direitos reservados
+        </div>
+    </footer>
+</body>
+</html>
