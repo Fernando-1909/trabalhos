@@ -3,65 +3,235 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Loja Fernando</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Cadastro de Clientes - GameStore</title>
+    <link rel="stylesheet" href="/trabalhos/proj4/public/css/style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Loja Fernando</div>
+            <div class="logo">GameStore</div>
             <div class="nav-links">
-                <a href="/">Home</a>
-                <a href="/about" class="active">Sobre</a>
-                <a href="/admin">Admin</a>
+                <a href="/trabalhos/proj4/public/index.html">Home</a>
+                <a href="/trabalhos/proj4/public/about.html">Sobre</a>
+                <a href="/trabalhos/proj4/public/admin.html" class="active">Admin</a>
             </div>
         </nav>
     </header>
 
     <section class="container">
-        <h2 class="section-title">Nossa História</h2>
-        <div class="about-section">
-            <div>
-                <img src="images/loja.png" alt="Nossa Loja" class="about-image">
-            </div>
-            <div class="about-content">
-                <h2>GameStore - Paixão por Jogos</h2>
-                <p>Fundada em 2010, a Loja Fernando nasceu porque Fernando quer dinheiro.</p>
-                <p>Hoje somos referência no mercado, com mais de 50.000 clientes satisfeitos e uma coleção de mais de 2 jogos disponíveis.</p>
-                <p>Nossa missão é continuar trazendo as melhores experiências de jogos para você, e ganhar muita grana!!!</p>
-            </div>
-        </div>
+        <h2 class="section-title">Cadastro de Clientes</h2>
+        <form class="admin-form" id="clientForm">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <div class="form-group">
+                    <label for="nome">Nome Completo*</label>
+                    <input type="text" id="nome" required>
+                    <span class="error-message" id="nome-error"></span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" required>
+                    <span class="error-message" id="email-error"></span>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cpf">CPF*</label>
+                        <input type="text" id="cpf" maxlength="14" required>
+                        <span class="error-message" id="cpf-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="idade">Idade*</label>
+                        <input type="number" id="idade" min="13" max="120" required>
+                        <span class="error-message" id="idade-error"></span>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefone">Telefone*</label>
+                        <input type="tel" id="telefone" required>
+                        <span class="error-message" id="telefone-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nascimento">Data de Nascimento</label>
+                        <input type="date" id="nascimento">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Sexo</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="sexo" value="M"> Masculino</label>
+                        <label><input type="radio" name="sexo" value="F"> Feminino</label>
+                        <label><input type="radio" name="sexo" value="O"> Outro</label>
+                        <label><input type="radio" name="sexo" value="N" checked> Prefiro não informar</label>
+                    </div>
+                </div>
+            </fieldset>
 
-        <h2 class="section-title">Nosso Time</h2>
-        <div class="team-grid">
-            <div class="team-member">
-                <img src="images/ceo.png" alt="CEO">
-                <h3>Fernando Macedo</h3>
-                <p>CEO e Fundador</p>
-            </div>
-            <div class="team-member">
-                <img src="images/sans.png" alt="Diretor">
-                <h3>Sans undertale</h3>
-                <p>Diretor Comercial</p>
-            </div>
-            <div class="team-member">
-                <img src="images/papyrus.png" alt="Gerente">
-                <h3>Ppayrus undertale</h3>
-                <p>Gerente de Vendas</p>
-            </div>
-        </div>
-    </section>
+            <fieldset>
+                <legend>Endereço</legend>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cep">CEP*</label>
+                        <input type="text" id="cep" maxlength="9" required>
+                        <span class="error-message" id="cep-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipoLogradouro">Tipo de Logradouro*</label>
+                        <select id="tipoLogradouro" required>
+                            <option value="">Selecione...</option>
+                            <option value="Rua">Rua</option>
+                            <option value="Avenida">Avenida</option>
+                            <option value="Travessa">Travessa</option>
+                            <option value="Alameda">Alameda</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="logradouro">Logradouro*</label>
+                    <input type="text" id="logradouro" required>
+                    <span class="error-message" id="logradouro-error"></span>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="numero">Número*</label>
+                        <input type="text" id="numero" required>
+                        <span class="error-message" id="numero-error"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" id="complemento">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bairro">Bairro*</label>
+                    <input type="text" id="bairro" required>
+                    <span class="error-message" id="bairro-error"></span>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="cidade">Cidade*</label>
+                        <input type="text" id="cidade" required>
+                        <span class="error-message" id="cidade
+                        
+            const idade = document.getElementById('idade');
+            if (idade.value < 13 || idade.value > 120) {
+                showError('idade', 'Idade deve ser entre 13 e 120 anos');
+                isValid = false;
+            }
 
-    <footer>
-        <div class="logo">Loja Fernando</div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2023 Loja Fernando. Todos os direitos reservados.</p>
-    </footer>
+            // Validação de interesses
+            const interesses = document.querySelectorAll('input[name="interesses"]:checked');
+            if (interesses.length === 0) {
+                showError('interesses', 'Selecione pelo menos um interesse');
+                isValid = false;
+            }
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-</body>
-</html>
+            // Validação de arquivo
+            const documento = document.getElementById('documento');
+            if (documento.files.length > 0) {
+                const file = documento.files[0];
+                const validTypes = ['application/pdf', 'image/jpeg', 'image/png'];
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                
+                if (!validTypes.includes(file.type)) {
+                    showError('documento', 'Tipo de arquivo inválido (use PDF, JPG ou PNG)');
+                    isValid = false;
+                }
+                
+                if (file.size > maxSize) {
+                    showError('documento', 'Arquivo muito grande (máximo 5MB)');
+                    isValid = false;
+                }
+            }
+
+            if (isValid) {
+                // Simulação de envio bem-sucedido
+                alert('Formulário validado com sucesso! (Dados simulados - em produção seriam enviados ao servidor)');
+                form.reset();
+                
+                // Aqui você pode adicionar uma requisição AJAX real em produção:
+                /*
+                fetch('/api/clientes', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nome: document.getElementById('nome').value,
+                        email: document.getElementById('email').value,
+                        // ... outros campos
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert('Cliente cadastrado com sucesso!');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('Erro ao cadastrar cliente');
+                });
+                */
+            }
+        });
+
+        // Funções auxiliares
+        function showError(fieldId, message) {
+            const errorElement = document.getElementById(`${fieldId}-error`);
+            if (errorElement) {
+                errorElement.textContent = message;
+                errorElement.style.display = 'block';
+                document.getElementById(fieldId).classList.add('input-error');
+            }
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.textContent = '';
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.input-error').forEach(el => {
+                el.classList.remove('input-error');
+            });
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validateCPF(cpf) {
+            if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false;
+            
+            let sum = 0;
+            for (let i = 0; i < 9; i++) {
+                sum += parseInt(cpf.charAt(i)) * (10 - i);
+            }
+            let mod = sum % 11;
+            const digit1 = mod < 2 ? 0 : 11 - mod;
+            
+            sum = 0;
+            for (let i = 0; i < 10; i++) {
+                sum += parseInt(cpf.charAt(i)) * (11 - i);
+            }
+            mod = sum % 11;
+            const digit2 = mod < 2 ? 0 : 11 - mod;
+            
+            return digit1 === parseInt(cpf.charAt(9)) && digit2 === parseInt(cpf.charAt(10));
+        }
+    });
