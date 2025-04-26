@@ -97,8 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (isValid) {
-            // Simulação de envio - em produção seria uma requisição AJAX
-            alert('Formulário enviado com sucesso!');
+            alert('Formulário validado (simulação)');
             form.reset();
         }
     });
