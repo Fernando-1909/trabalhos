@@ -1,3 +1,4 @@
+/* Estilos gerais */
 :root {
     --primary: #6c5ce7;
     --secondary: #a29bfe;
@@ -7,62 +8,61 @@
     --danger: #d63031;
 }
 
-* {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-body {
     background-color: var(--light);
     color: var(--dark);
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Header */
 header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background-color: var(--primary);
     color: white;
-    padding: 1rem 5%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 2rem;
 }
 
 .logo {
     font-size: 1.8rem;
-    font-weight: 700;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
+    font-weight: bold;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
+    margin-left: 1.5rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     background-color: rgba(255,255,255,0.2);
 }
 
+/* Hero Section */
 .hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/hero-bg.jpg');
+    /* ALTERADO: Caminho da imagem de background */
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/trabalhos/proj4/public/images/hero-bg.jpg');
     background-size: cover;
     background-position: center;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,42 +73,21 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
 .hero p {
     font-size: 1.2rem;
-    max-width: 700px;
+    max-width: 600px;
     margin-bottom: 2rem;
 }
 
-.btn {
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn-primary {
-    background-color: var(--primary);
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #5649d1;
-}
-
-.container {
-    padding: 5rem 5%;
-}
-
+/* Jogos */
 .section-title {
     text-align: center;
-    margin-bottom: 3rem;
     font-size: 2.5rem;
+    margin-bottom: 3rem;
     color: var(--dark);
 }
 
@@ -119,22 +98,32 @@ nav {
 }
 
 .game-card {
-    background-color: white;
-    border-radius: 12px;
+    background: white;
+    border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
 .game-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+}
+
+.game-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
 }
 
 .game-image {
     width: 100%;
-    height: 200px;
+    height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-image {
+    transform: scale(1.05);
 }
 
 .game-info {
@@ -143,92 +132,125 @@ nav {
 
 .game-title {
     font-size: 1.3rem;
-    margin-bottom: 0.5rem;
+    margin: 0 0 0.5rem 0;
 }
 
-.game-platform {
-    color: var(--primary);
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+.game-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .game-price {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
+    margin: 1.5rem 0;
 }
 
 .original-price {
     text-decoration: line-through;
-    color: #636e72;
+    color: #999;
+    margin-right: 0.5rem;
 }
 
 .discounted-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--danger);
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary);
 }
 
 .discount-badge {
     background-color: var(--danger);
     color: white;
     padding: 0.2rem 0.8rem;
-    border-radius: 50px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.game-description {
+    color: #666;
+    margin: 1rem 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #5649d1;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
-    font-weight: 600;
 }
 
-.about-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-}
-
-.about-image {
-    width: 100%;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-}
-
-.about-content h2 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-
-.about-content p {
-    margin-bottom: 1.5rem;
-    line-height: 1.7;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-}
-
-.team-member {
+/* Newsletter */
+.newsletter {
+    background-color: var(--secondary);
+    padding: 3rem 0;
     text-align: center;
 }
 
-.team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 5px solid var(--primary);
+.newsletter h2 {
+    color: white;
+    margin-bottom: 1.5rem;
 }
 
-.admin-form {
-    max-width: 600px;
+.newsletter-form {
+    display: flex;
+    max-width: 500px;
     margin: 0 auto;
-    background-color: white;
+}
+
+.newsletter-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-form button {
+    border-radius: 0 4px 4px 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Estilos para o formulário admin */
+.admin-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
     padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .form-group {
@@ -238,76 +260,35 @@ nav {
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
-}
-
-.form-group input, 
-.form-group select, 
-.form-group textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-}
-
-footer {
-    background-color: var(--dark);
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    margin: 1.5rem 0;
-}
-
-.social-links a {
-    color: white;
-    font-size: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--secondary);
-}
-
-@media (max-width: 768px) {
-    .about-section {
-        grid-template-columns: 1fr;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-}
-/* Estilos para o formulário administrativo */
-fieldset {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-}
-
-legend {
-    padding: 0 1rem;
     font-weight: 600;
-    color: var(--primary);
 }
 
 .form-row {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .form-row .form-group {
     flex: 1;
 }
 
+input, select, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Radio e Checkbox */
 .radio-group, .checkbox-group {
     display: flex;
     flex-wrap: wrap;
@@ -322,6 +303,11 @@ legend {
     cursor: pointer;
 }
 
+/* Estilos para erros */
+.input-error {
+    border-color: var(--danger) !important;
+}
+
 .error-message {
     color: var(--danger);
     font-size: 0.85rem;
@@ -329,26 +315,30 @@ legend {
     display: none;
 }
 
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.btn-secondary {
-    background-color: #636e72;
-    color: white;
-}
-
-.btn-secondary:hover {
-    background-color: #2d3436;
-}
-
-/* Responsividade */
+/* Responsivo */
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+    }
+    
+    .nav-links a {
+        margin: 0 0.5rem;
+    }
+
     .form-row {
         flex-direction: column;
-        gap: 1rem;
     }
 }
